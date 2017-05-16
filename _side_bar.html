@@ -1,0 +1,117 @@
+<div>
+<style>
+.navigation-bar {
+    padding-bottom: 100%;
+    /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.55)); */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.6));
+    margin-top: -10px;
+    margin-left: -30px;
+    text-align: -webkit-center;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 100;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+}
+.navigation-hdn{
+	width: 100%;
+	padding: 10px;
+	padding-top: 35px;
+	padding-bottom: 25px;
+}
+
+.navigation-cntnt{
+	margin-top: -10px;
+}
+.navigation-divider{
+	width: 65%;
+    color: #fff;
+    border: 0 none;
+    height: 1.5px;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+.navigation-row1 {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 20px;
+    padding: 25px;
+}
+
+.navigation-row1:hover {
+	color: #fff;
+	background: darkcyan;
+	font-size: 30px;
+    font-weight: 200;
+}
+
+.navigation-row2{
+	width: 100%;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 20px;
+    padding: 25px;
+}
+
+.navigation-row2:hover {
+	color: #fff;
+	background: crimson;
+	font-size: 30px;
+    font-weight: 200;
+}
+
+.navigation-row3{
+	width: 100%;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 20px;
+    padding: 25px;
+}
+
+.navigation-row3:hover {
+	color: #fff;
+	background: chocolate;
+	font-size: 30px;
+    font-weight: 200;
+}
+
+.navigation-row4{
+	width: 100%;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 20px;
+    padding: 25px;
+}
+
+.navigation-row4:hover {
+	color: #fff;
+	background: darkslateblue;
+	font-size: 30px;
+    font-weight: 200;
+}
+.navigation-features{
+	
+}
+
+.navigation-sub-hdn{
+	padding-bottom:25px;
+	font-size: -webkit-xxx-large;
+}
+
+</style>
+<div class="navigation-bar">
+		<div class="navigation-hdn">
+			V - Engage
+		</div>
+	<div class="navigation-cntnt">	
+		<hr class="navigation-divider">
+		<div class="navigation-features" ng-repeat="top in $sideBarCtrl.mainFeatures track by $index" ng-click="$sideBarCtrl.updateShow($index)">
+			<div class="navigation-sub-hdn">
+				{{top}}
+			</div>
+					<div ng-hide="$sideBarCtrl.show[$index]">
+						<div class="navigation-row{{$sideBarCtrl.position(top)}}" ng-repeat="type in $sideBarCtrl.evaluvate(top)" ng-click="$sideBarCtrl.updateSelected(type)">
+							{{type}}
+						</div>
+						<hr class="navigation-divider">
+					</div>
+		</div>
+	</div>
+</div>
+</div>

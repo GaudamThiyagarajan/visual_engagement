@@ -1,0 +1,392 @@
+<div class="parent-journey">
+  <style>
+	.outer-disp{
+			overflow: scroll;
+			margin-left: 5%;
+			margin-bottom: 5%;
+			margin-right: 5%;
+			border: 2px solid black;
+		}
+	.journey{
+			width:1500px;
+			height:800px;			
+		}
+
+	.dotm-overlay {
+			/*  background: url(/assets/dotted.png); */
+			width: 100%;
+			height:	100%;
+		}
+		.svg-body{
+			width:100%;
+			height:100%;
+		}
+		.draggable {
+      			  cursor: move;
+   			 }
+   		.journey-event {
+			    width: 106%;
+			    height: 60px;
+			    background: black;
+			    top: -46px;
+			    overflow: scroll;
+  				 left: -15px;
+			}
+   		.journey-event-overlay{
+	   		background: rgba(255, 6, 150, 0.74);
+    		height: 100%;
+    		border: 2px solid black;
+ 		   	position: relative;
+ 		   	padding-bottom: 10px;
+   		}
+   		 .module-box{
+   			 	color: white;
+			    height: 100%;
+			    font-size: x-large;
+			    display: inline-block;
+			    min-width: 450px;
+			    float: left;
+			    margin: 5px;
+			    margin-bottom: 10px;
+			    padding: 5px;
+			    border-radius: 5px;
+			    text-align: center;
+			    letter-spacing: 5px;
+   				font-variant: small-caps;
+   			 }
+   			 .module-box:hover{
+   			 	color: white;		
+   			 }
+
+   			 .dummy{
+   			 	background: rgba(0, 0, 0, 0.2);
+   			 	border: 1px solid rgba(0, 0, 0, 0.65);
+   			 }
+
+   			 .dummy:hover{
+   			 	background: rgba(0, 0, 0, 0.65);
+   			 }
+   			  
+   			 .Triggers{
+   			 	border: 2px solid rgb(17, 158, 0);
+   			 	background: rgb(17, 158, 0);
+   			 }
+   			 .Triggers:hover{
+      			background: rgba(33, 255, 6, 0.741176);
+   			 }
+
+   			 .Actions{
+   			 	border: 2px solid rgba(6, 152, 255, 0.741176);
+   			 	background: rgb(0, 100, 158);
+   			 }
+   			 .Actions:hover{
+   			 	background: rgba(6, 152, 255, 0.741176);
+   			 }
+   			 .Condition{
+   			 	border: 2px solid rgba(255, 6, 150, 0.741176);
+   			 	background: rgb(158, 0, 91);
+   			 }
+   			 .Condition:hover{
+   			 	background: rgba(255, 6, 150, 0.741176);
+   			 }
+   			 .Flow{
+   			 	border: 2px solid rgb(218, 204, 39);
+   			 	background: rgb(189, 155, 29);
+   			 }
+   			  .Flow:hover{
+   			 	background: rgb(218, 204, 39);
+   			 }
+   			 .event-logo{
+   			 	top: 3px;
+    			right: 5%;
+   			 }
+   			 .custom-dropdown-modal{
+				font-size: large;
+   			 }
+   			 .dropdown-menu-custom{
+   			 	width: 100% !important;
+   			 }
+   			 .custom-dropdown-modal{
+				padding: 5%;
+				padding-left: 25%;
+   			 }
+   			 .custom-dropdown-modal:hover{
+   			 	background: #7ab7ec;
+   				font-size: x-large;
+   			 }
+   			 .custom-dropdown-btn-toggle{
+   			 	    background: white !important;
+   			 		border: 1px solid #949494 !important;
+   			 }
+   			 .custom-dropdown-btn-toggle[aria-expanded="true"]{
+   			 	background: #343335 !important;
+    			color: white;
+   			 }
+   			 .img-selection-notif{
+ 			   margin-left: 15%;
+			   display: inline-block;
+   			 }
+   			 .journey-broadcast .mobile{
+   			 	width: 400%;   			 	
+   			 }
+   			 .carousel_sub .mobile{
+   			 	left: 950%;
+   			 }
+   			 .text_banner_sub .mobile{
+   			 	left: 990%;
+   			 }
+   			 .journey-broadcast .glyphicon-cog{
+   			 	font-size: 20px;
+   			 }
+			.save-journey {
+			    font-size: x-large;
+			    font-variant: small-caps;
+    			width: 18%;
+			    border: 1px solid rgba(152, 12, 93, 0.74);
+			    border-radius: 5px;
+			    background: white;
+			    color: rgba(152, 12, 93, 0.74);
+			    letter-spacing: 2px;
+			    display: inline-block;
+			    float: right;
+			    margin-right: 2%;
+			}
+   			 .reset-journey{
+   			 	display: inline-block;
+   			 	font-size: x-large;
+   			 	font-variant: small-caps;
+  				width: 18%;
+			    border: 1px solid rgba(152, 12, 93, 0.74);
+			    border-radius: 5px;
+			    background: white;
+			    color: rgba(152, 12, 93, 0.74);
+			    letter-spacing: 2px;
+			    float: right;
+			    margin-right: 4%;
+   			 }
+   			 .save-journey:hover{
+   			 	color: white;
+   			 	background: rgba(152, 12, 93, 0.74);
+   			 }
+   			 .reset-journey:hover{
+   			 	color: white;
+   			 	background: rgba(152, 12, 93, 0.74);
+   			 }
+   			 .master-div-journey{
+   			 	    padding-bottom: 3%;
+   			 }
+   			 #modalSaveJourney{
+   			     font-size: x-large;
+   			 }
+   			 .modal-save-save{
+				   font-size: smaller;
+				}
+			.input-modal-save{
+					 border: 1px solid cadetblue;
+				    border-radius: 3px;
+				    font-size: smaller;
+				}
+				.email_label{
+				    font-size: smaller;
+				    font-variant: small-caps;
+				}
+				.input_layout {
+				    display: inline-flex;
+				    width: 100%;
+				    padding: 1%;
+				}
+				.email_label{
+					width: 50%;
+					text-align: left;
+					padding-left: 35%;
+				}
+				.text_input_email{
+					text-align: justify;
+				    margin-left: 0%;
+				    width: 30%;
+				    text-align: center;
+				}
+		</style>
+	<div ng-show="$lifeCycleCtrl.showEventHeader" class="journey-event col-md-12">
+		<div class="journey-event-overlay row" ng-style="{width: $lifeCycleCtrl.resetEventName()}">
+			<div class="module-box {{$lifeCycleCtrl.selectedEventHeader}}" ng-repeat="actions in $lifeCycleCtrl.returnEventNames()" ng-click="$lifeCycleCtrl.setEventName(actions.type)" >
+				<div class="event-logo glyphicon {{actions.glyphicon}}" />
+					{{actions.type}}
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalSaveJourney" tabindex="-1" role="dialog" aria-labelledby="modalSaveJourneyLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" data-target="modalSaveJourney" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	        <h4 class="modal-title center_txt" id="modalSaveJourneyLabel">
+	        	Save Journey
+	        </h4>
+	      </div>
+	      <div class="modal-body">
+	      	Save As : <input type="text" class="input-modal-save" value="make sure you save in new name" ng-model="$lifeCycleCtrl.saveJourney"></input>
+	      </div>
+	      <div class="modal-footer">
+	      	<div class="modal-save-save" data-dismiss="modal" data-target="modalSaveJourney" ng-click="$lifeCycleCtrl.set()">save</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade" id="modalResetJourney" tabindex="-1" role="dialog" aria-labelledby="modalResetJourneyLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" data-target="modalResetJourney" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	        <h4 class="modal-title center_txt" id="modalResetJourneyLabel">
+	        	Reset Journey
+	        </h4>
+	      </div>
+	      <div class="modal-body">
+	      	 <div class="modal-body" style="font-size: x-large;">
+		      	<p>
+		      		<div class="btn-group open_group">
+					    <button class="btn input-modal-save btn-secondary btn-lg dropdown-toggle custom-dropdown-btn-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Choose A Reset State
+						  </button>
+					  <div class="dropdown-menu dropdown-menu-custom">
+					    <div class="dropdown-item custom-dropdown-modal" ng-repeat="resetState in $lifeCycleCtrl.saveNames" ng-click="$lifeCycleCtrl.setResetName(resetState)">{{resetState}}</div>
+					  </div>
+					</div>
+		      	</p>
+		      </div>
+	      </div>
+	      <div class="modal-footer">
+	      	<div class="modal-save-save" style="font-size: large;" ng-click="$lifeCycleCtrl.reset($lifeCycleCtrl.resetTo)" data-dismiss="modal" data-target="modalResetJourney" >Reset</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div ng-show="$lifeCycleCtrl.showEventHeader" class="master-div-journey col-md-12">
+		<button data-target="#modalResetJourney" ng-click="$lifeCycleCtrl.setSaveNames()" data-toggle="modal" class="reset-journey">reset journey</button>
+		<button  class="save-journey" data-target="#modalSaveJourney" data-toggle="modal">save journey</button >
+	</div>
+<div ng-repeat="modal_container in $lifeCycleCtrl.eventContainer track by $index" >
+	<div class="modal fade" id="modalContainer{{$index}}" tabindex="-1" role="dialog" aria-labelledby="modalContainer{{$index}}Label" aria-hidden="true">
+	  <div class="modal-dialog" role="document" style="width: 85%;">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" data-target="modalContainer{{$index}}" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	        <h4 class="modal-title center_txt" id="modalContainer{{$index}}Label">
+	        	Edit - {{modal_container.subEvent}}
+	        </h4>
+	      </div>
+	      <div ng-if="modal_container.subEvent == 'Send Push'" class="modal-body col-md-12" style="font-size: x-large;display:inline-flex;background: white;">
+	      		<div ng-show="$lifeCycleCtrl.showMobileDevice() == 0" class="img-selection-notif">
+	      			<img style="height:100%" ng-click="$lifeCycleCtrl.updateSelectedDevice('Android')" src="/assets/PNAndroidExample.png" />
+	      		</div>
+	      		<div ng-show="$lifeCycleCtrl.showMobileDevice() == 0" class="img-selection-notif ios_image_notif">
+	      			<img style="padding: 2%;" ng-click="$lifeCycleCtrl.updateSelectedDevice('iPhone')" src="/assets/PNiOSExample.png" />
+	      		</div>
+	      		<mobile-image class="col-md-12" ng-show="$lifeCycleCtrl.showMobileDevice() == 1" image-type="$lifeCycleCtrl.selectedDevice" style="padding-top: 5%;" n-type="$lifeCycleCtrl.notificationType" ></mobile-image>
+	      		<broadcast ng-show="$lifeCycleCtrl.showMobileDevice() == 2" class="journey-broadcast" n-type="$lifeCycleCtrl.notificationType" ng-class="{text_banner_sub: $lifeCycleCtrl.matchesNType('Banner,Text'),carousel_sub: $lifeCycleCtrl.matchesNType('Carousel')}" device-type="$contentPageCtrl.selectedDevice"></broadcast>
+	      </div>
+	      <div ng-if="modal_container.subEvent == 'Send Email'" class="modal-body col-md-12" style="font-size: x-large;background: white;">
+	      	<div>
+	      		<div class="input_layout">
+	  				<label class="email_label" >From Name</label>
+					<input class="text_input_email"></input> 
+				</div>
+				<div class="input_layout">	
+					<label class="email_label" >From Email</label>
+					<input class="text_input_email"></input>
+				</div>
+				<div class="input_layout">	
+					<label class="email_label" >Subject</label>
+					<input class="text_input_email"></input>
+				</div>
+  			</div>
+	      	<editor></editor>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+<div ng-repeat="modal_arrow_container in $lifeCycleCtrl.eventContainer track by $index" >
+	<div ng-repeat="arrow_pointer in modal_arrow_container.pointerElement track by $index" >
+		<div class="modal fade" id="arrowPointer_{{$parent.$index}}_{{$index}}" tabindex="-1" role="dialog" aria-labelledby="arrowPointer_{{$parent.$index}}_{{$index}}Label" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" data-target="arrowPointer_{{$parent.$index}}_{{$index}}" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		        <h4 class="modal-title center_txt" id="arrowPointer_{{$parent.$index}}_{{$index}}Label">
+		        	Choose - {{modal_arrow_container.subEvent}} - CallBack Action
+		        </h4>
+		      </div>
+		      <div class="modal-body" style="font-size: x-large;">
+		      	<p>
+		      		<div class="btn-group open_group">
+					    <button class="btn btn-secondary btn-lg dropdown-toggle custom-dropdown-btn-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Choose A Callback Value
+						  </button>
+					  <div class="dropdown-menu dropdown-menu-custom">
+					    <div class="dropdown-item custom-dropdown-modal" ng-repeat="subEventPossibleValue in $lifeCycleCtrl.getSubEvent(modal_arrow_container).possible_values" ng-click="$lifeCycleCtrl.setArrowConditionValue(arrow_pointer,subEventPossibleValue)" data-dismiss="modal" data-target="arrowPointer_{{$parent.$index}}_{{$index}}" aria-label="Close">{{subEventPossibleValue}}</div>
+					  </div>
+					</div>
+		      	</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</div>
+	<div class="outer-disp">
+		<div class="journey">
+			    <div class="dotm-overlay">
+			    	<svg class="svg-body" ng-mouseup="$lifeCycleCtrl.releaseRect()" ng-mousemove="$lifeCycleCtrl.mouseMove($event)" ng-mouseout="$lifeCycleCtrl.resetShowHeader(true)" ng-mouseover="$lifeCycleCtrl.resetShowHeader(false)">
+			    			<g ng-repeat="container in $lifeCycleCtrl.eventContainer track by $index" ng-mouseover="$lifeCycleCtrl.applyStyle($index)" ng-mouseout="$lifeCycleCtrl.removeStyle($index)" ng-mouseout="$lifeCycleCtrl.mouseOutProjector($event,$index)" >
+				    			 <clipPath id="cut-off-bottom-{{$index}}">
+	          							<rect ng-attr-x="{{$lifeCycleCtrl.placeHolder[$index].x + $lifeCycleCtrl.rectWidth}}" ng-attr-y="{{container.cy - $lifeCycleCtrl.outerProjectionRadius}}" ng-style="{width: $lifeCycleCtrl.outerProjectionRadius,height: $lifeCycleCtrl.rectHeight}" />
+	      						</clipPath>
+			    				<circle ng-style="container.outerProjectionObject" ng-attr-cx="{{container.cx}}" ng-attr-cy="{{container.cy}}" clip-path="url(#cut-off-bottom-{{$index}})" ng-mousedown="$lifeCycleCtrl.pushHand($event,$index)" ng-mouseover="$lifeCycleCtrl.mouseOverProjector($event,$index)" ng-mouseout="$lifeCycleCtrl.mouseOutProjector($event,$index)" />
+			    				<circle ng-style="container.innerProjectionObject" ng-attr-cx="{{container.cx}}" ng-attr-cy="{{container.cy}}" clip-path="url(#cut-off-bottom-{{$index}})" ng-mousedown="$lifeCycleCtrl.pushHand($event,$index)" ng-mouseover="$lifeCycleCtrl.mouseOverProjector($event,$index)" />
+			    				<g class="glyph_{{$index}}"  data-toggle="modal" data-target="#modalContainer{{$index}}" style="cursor:pointer;">
+			    					<foreignObject ng-attr-x="{{$lifeCycleCtrl.placeHolder[$index].x + 3}}" ng-attr-y="{{$lifeCycleCtrl.placeHolder[$index].y + 18}}" ng-style="$lifeCycleCtrl.glyphiconStyleObject">
+			    						<span class="glyphicon {{container.glyphiconObject}}" ></span>
+			    					</foreignObject>
+			    				</g>
+								  <rect ng-style="container.rectangularObject" ng-mousedown="$lifeCycleCtrl.rectMouseDown($event,$index)" ng-attr-x="{{$lifeCycleCtrl.placeHolder[$index].x}}" ng-attr-y="{{$lifeCycleCtrl.placeHolder[$index].y}}" rx="5px" ry="5px"/>
+								  <clipPath id="rect-body-{{$index}}">
+							   		 <rect ng-style="container.rectangularObjectTopLayer" x="0" y="0" />
+							   		 <rect ng-style="container.rectangularObjectLeftLayer" x="0" y="0" />
+							   		 <rect ng-style="container.rectangularObjectRightLayer" ng-attr-x="{{$lifeCycleCtrl.placeHolder[$index].x + $lifeCycleCtrl.rectWidth}}" y="0" />
+							   		 <rect ng-style="container.rectangularObjectBottomLayer" x="0" ng-attr-y="{{$lifeCycleCtrl.placeHolder[$index].y + $lifeCycleCtrl.rectHeight}}"/>
+								</clipPath>
+								<g width="{{$lifeCycleCtrl.rectWidth}}" height="{{$lifeCycleCtrl.rectHeight}}">
+									<text class="name_{{$index}}" alignment-baseline="middle" text-anchor="middle" ng-attr-x="{{container.midPointXOfRect + 10}}" ng-attr-y="{{container.midPointYOfRect - 5}}" style="font-size: large;fill: white;letter-spacing: 2px;font-variant: small-caps;" ng-click="$lifeCycleCtrl.editText(container)">
+				    					{{container.value}}
+				    				</text>
+			    				</g>
+			    			<circle  ng-attr-cx="{{$lifeCycleCtrl.placeHolder[$index].x - 30 + $lifeCycleCtrl.rectWidth}}" ng-attr-cy="{{$lifeCycleCtrl.placeHolder[$index].y + $lifeCycleCtrl.smallRectY - 5}}" ng-style="container['delete-circle']" style="cursor:pointer;"  ng-click="$lifeCycleCtrl.deleteEventRect($index)">
+			    			</circle>
+			    				<g class="delete_{{$index}}" style="cursor:pointer;" ng-click="$lifeCycleCtrl.deleteEventRect($index)">
+			    					<foreignObject ng-attr-x="{{$lifeCycleCtrl.placeHolder[$index].x - 38.5 + $lifeCycleCtrl.rectWidth}}" ng-attr-y="{{$lifeCycleCtrl.placeHolder[$index].y + $lifeCycleCtrl.smallRectY - 15}}" ng-style="$lifeCycleCtrl.glyphiconTrashStyleObject">
+			    						<span class="glyphicon glyphicon-trash" ></span>
+			    					</foreignObject>
+			    				</g>
+								<g ng-repeat="pointer in container.pointerElement track by $index">
+							     <line ng-attr-x1="{{container.midPointXOfRect}}" ng-attr-y1="{{container.midPointYOfRect}}" ng-attr-x2="{{pointer.linePtX}}" ng-attr-y2="{{pointer.linePtY}}" ng-style="pointer.lineStyleObject" clip-path="url(#rect-body-{{$parent.$index}})" />
+							     <polygon ng-attr-points="{{pointer.trianglePointAX}},{{pointer.trianglePointAY}} {{pointer.trianglePointBX}},{{pointer.trianglePointBY}} {{pointer.trianglePointCX}},{{pointer.trianglePointCY}}" ng-style="pointer.arrowStyleObject" ng-mousedown="$lifeCycleCtrl.arrowMouseDown($event,$parent.$index,$index)" clip-path="url(#rect-body-{{$parent.$index}})"/>
+							     <rect id="myArrowPointerToggler_{{$parent.$index}}_{{$index}}" data-toggle="modal" data-target="#arrowPointer_{{$parent.$index}}_{{$index}}" />
+						 		</g>
+						 		  <rect id="myModalToggler_{{$index}}" ng-attr-x="{{$lifeCycleCtrl.placeHolder[$index].x + $lifeCycleCtrl.smallRectX}}" ng-attr-y="{{$lifeCycleCtrl.placeHolder[$index].y + $lifeCycleCtrl.smallRectY}}" width="{{$lifeCycleCtrl.smallRectWidth}}" height="{{$lifeCycleCtrl.smallRectHeight}}" rx="5px" ry="5px" ng-style="container['glyph-box-color']" data-toggle="modal" data-target="#modalContainer{{$index}}" style="cursor:pointer;"
+						 		  />
+				        	</g>
+					</svg> 
+			    </div>
+		</div>
+	</div>	
+</div>

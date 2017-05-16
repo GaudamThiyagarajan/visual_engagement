@@ -1,0 +1,99 @@
+<style>
+.container {
+    width: 100%;
+}
+.logo {
+    padding-top: 10px;
+    padding-left: 75px;
+}
+.adjust_side_bar {
+	height: 55px;
+    margin-left: -30px;
+    margin-top: -27px;
+}
+.glyphicon-class {
+    position: relative;
+        top: 3px;
+    display: inline-block;
+    color: white;
+	background: rgba(255, 6, 150, 0.74);
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0;
+    font-size: 40px;
+    vertical-align: text-top;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.header{
+	width:100%;
+	background: black;
+    /* background: #337ab7; */
+    top: -5px;
+	/*background: #337ab7;*/
+}
+.header2{
+	color: white;
+	width: 105%;
+    margin-top: -1px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    padding-left: 30px;
+    color: white;
+    margin-left: -30px;
+    font-size: 40px;
+    background: black;
+}
+.static{
+	color: white;
+	width: 105%;
+    padding: 5px;
+    margin-top: -1px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    padding-left: 30px;
+    color: white;
+    margin-left: 0px;
+    font-size: 40px;
+}
+.content1{
+	font-size: 100px;	
+	margin-top: 50px;
+}
+
+.content2{
+	font-size: 100px;
+    padding-top: 100px;
+}
+</style>
+<div class="container-fluid">
+  <div class="row">
+  	<div ng-if="showNavigator == true">
+	    <div class="col-md-3" ng-mouseleave="showSideBar(false)">
+	      <!--Sidebar content-->
+	      <side-bar ng-click="show()" val="menu" notification-type="notificationType"> </side-bar>
+	    </div>
+	    <div class="col-md-9 content">
+	    	<div class="header2">
+	    		{{heading}}
+	    	</div>
+	      <!--Body content-->
+	      <div class="content1">
+	      	<content-page device="showDevice" heading="heading" notification-type="notificationType"></content-page>
+	      </div>
+	   </div>
+	</div>
+	    <div  class="col-md-12" ng-if="showNavigator == false">
+	    		<div class="header">
+	    			<span class="adjust_side_bar glyphicon  glyphicon-class" style="padding:19px;" ng-mouseover="showSideBar(true)" > &nbsp;V&nbsp;
+	    			</span>
+	    			<span class="static">{{heading}}</span>
+	    		</div>
+		    	<div class="content2">
+		      		<content-page device="showDevice" heading="heading" notification-type="notificationType" ng-click="exhibit()">{{showDevice}}</content-page>
+		      	</div>
+	    </div>
+	</div>
+  </div>
+</div>

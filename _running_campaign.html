@@ -1,0 +1,119 @@
+<div>
+	<style>
+	.active_campaigns {
+    border: 2px solid #67da67;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+	.topic {
+    font-size: xx-large;
+    position: relative;
+    background: white;
+    color: #67da67;
+    top: 0%;
+    left: 5%;
+    width: 10%;
+    text-align: center;
+    padding: 0px;
+    margin-top: -20px;
+}
+.active_content{
+    font-size: xx-large;
+    padding: 35px;
+    padding-top: 25px;
+    color: #5fc55f;
+}
+.active_inner{
+	padding-top: 25px;
+    padding-left: 10%;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+    width: 50%;
+}
+.campaign_name{
+	border: 1.5px solid #5fc55f;
+	color: #5fc55f;
+	width: 20%;
+	border-radius: 5px;
+	font-size: large;
+	margin-top: 6%;
+	letter-spacing: 2px;
+	position: absolute;
+}
+.campaign_name:hover{
+	color: white;
+	background: #5fc55f;
+}
+.active_inner .progress{
+	width: 60%;
+    margin-left: 30%;
+    margin-top: 1%;
+    /* background: #c0e3ff;*/
+}
+.round-progress-custom{
+	width: 20%;
+	margin-left: 50%;
+	position:relative;
+}
+.progress_percentage{
+	bottom: 30%;
+    position: absolute;
+    left: 25%;
+    font-size: smaller;
+    color: white;
+}
+.active_inner:hover .progress_percentage{
+	color: #5fc55f;
+}
+	</style>
+	<div class="active_campaigns">
+		<div class="topic">
+			Active
+		</div>
+		<div class="row active_content">
+			<div class="active_inner col-md-6" ng-repeat="campaign in $runningCampaignCtrl.campaigns">
+				<div class="campaign_name" >
+						{{campaign.name}}
+				</div>
+				<div class="round-progress-custom">
+					    <round-progress
+                            max="100"
+                            current="campaign.percentage"
+                            color="#368a36"
+                            bgcolor="#ddffde"
+                            radius="10"
+                            stroke="2"
+                            rounded="false"
+                            clockwise="true"
+                            responsive="true"
+                            duration="10000" 
+                            animation="easeOutBounce"
+                            animation-delay="1000"
+                            on-render="$runningCampaignCtrl.callCurrent(campaign.name)"
+                            >
+                        </round-progress>
+                        <div class="progress_percentage">{{campaign.percentage}}%</div>
+                </div>
+			</div>
+		</div>
+	</div>
+	<div class="active_campaigns">
+		<div class="topic">
+			Active
+		</div>
+		<div class="row active_content">
+			<div class="active_inner col-md-6" ng-repeat="campaign in $runningCampaignCtrl.campaigns">
+				<div class="campaign_name" >
+						{{campaign.name}}
+				</div>
+				<div>
+					<reverse-timer date="campaign.date"></reverse-timer>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

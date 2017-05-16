@@ -1,0 +1,7 @@
+<div>
+	<coming-soon ng-show="$contentPageCtrl.view() == 0"> </coming-soon>
+	<mobile-image ng-show="$contentPageCtrl.view() == 1" n-type="$contentPageCtrl.notificationType" image-type="$contentPageCtrl.device" ng-click="$contentPageCtrl.sendChoosenNotificaition()"></mobile-image>
+	<broadcast ng-show="$contentPageCtrl.view() == 2" n-type="$contentPageCtrl.notificationType" device-type="$contentPageCtrl.device"></broadcast>
+	<running-campaign ng-show="$contentPageCtrl.view() == 3"></running-campaign>
+	<life-cycle ng-show="$contentPageCtrl.view() == 4"></life-cycle>
+</div>

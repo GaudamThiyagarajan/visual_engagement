@@ -1,0 +1,46 @@
+<div>
+<style>
+.image_layout{
+	margin-bottom:10%;
+}
+.mobile{
+	border-color: black;
+	text-align: center;
+    margin-left: 6%;
+}
+.mobile_text{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.9);
+}
+.mobile_image{    
+	margin: 0 auto;
+    padding-top: 0%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border-radius: 20px;
+    background: rgba(70, 70, 70, 0);
+}
+.mobile_inner_div{
+    margin: -2%;
+    padding: 5%;
+    border: 2px solid rgba(70, 70, 70, 0.74);
+    border-radius: 20px;
+    background-color: white;
+}
+
+.mobile_inner_div:hover{
+    background-color: rgba(227, 228, 230, 0.36);
+}
+
+</style>
+<div class="image_layout row">
+	<div class="mobile col-md-3" ng-repeat="iphone in $mobileImageCtrl.getMobileDevice($mobileImageCtrl.imageType)" ng-click="$mobileImageCtrl.selectNotificationType($mobileImageCtrl.imageType,iphone.title)">
+		<div class="mobile_inner_div">
+			<div class="mobile_text">
+				{{iphone.title}}
+			</div>	
+			<img class="mobile_image img-responsive" src="{{iphone.image}}">
+		</div>
+	</div>
+</div>
+</div>

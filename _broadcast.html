@@ -1,0 +1,329 @@
+<div>
+	<style>
+	.image_layout{
+	margin-bottom:10%;
+}
+.mobile{
+	border-color: black;
+	text-align: center;
+    margin-left: 6%;
+}
+.mobile_text{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.9);
+}
+.mobile_image{    
+	margin: 0 auto;
+    padding-top: 0%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border-radius: 20px;
+    background: rgba(70, 70, 70, 0);
+}
+.mobile_inner_div_single{
+    border: 2px solid rgba(70, 70, 70, 0.74);
+    border-radius: 20px;
+    background-color: white;
+}
+
+.mobile_image_layout {
+    height: 550px;
+    display: inline-block;
+    position: relative;
+    max-width: 485px;
+    background-repeat: no-repeat;
+    background: black;
+    width: 75%;
+    background-size: 100%;
+    border-radius: 25px;
+    margin-top: 2%;
+
+}
+
+.paragraph_image_title{
+	    margin-top: 20px
+}
+.mobile_display {
+    position: relative;
+    width: 90%;
+    height: 81%;
+    background: rgb(160, 160, 160);
+    margin: auto;
+    display: block;
+    margin-top: 15%;
+    border-radius: 5px;
+}
+
+.mobile_button {
+    width: 75px;
+    height: 25px;
+    background: rgba(105, 101, 101, 0.36);
+    display: block;
+    margin: auto;
+    margin-top: 4%;
+    border-radius: 5px;
+}
+.notification_layout {
+    width: 100%;
+    background: white;
+    top: 10%;
+    position: absolute;
+    border: 2px solid rgba(21, 20, 20, 0.71);
+    padding-bottom: 2%;
+}
+.notification{
+	margin:3%
+}
+.glyphicon-cog{
+    margin-top: 3%;
+    size: 3%;
+    font-size: 25%;
+    color: black;
+    background: white;
+    text-align: right;
+}
+.mobile_setting {
+    height: 10%;
+    background: white;
+    width: 10%;
+    top: 1%;
+    right: 2%;
+    position: absolute;
+}
+.mobile_header{
+    background: white;
+    width: 100%;
+    height: 10%;
+    position: relative;
+}
+.mobile_battery{
+    font-size: 29px;
+    margin-top: 0px;
+    right: 40px;
+    height: 10px;
+    position: absolute;
+}
+.logo_notif{
+	width: 20%;
+}
+.notification_content{
+	font-size: medium;
+    text-align: left;
+    margin-left: 25%;
+}
+.notification_description{
+	font-size: smaller;
+	margin-top: 5px;
+}
+.notification_big_image{
+	font-size: smaller;
+	margin-top: 2px;
+	padding-top: 1%;
+}
+
+.multi-carousel-custom{
+  .carousel-inner-custom{
+    > .item{
+    }
+    .active{
+      &.left{
+        left:-33%;
+      }
+      &.right{
+        left:33%;
+      }
+    }
+    .item {
+    width: 111%;
+    margin-left: -15px;
+}
+    .next{
+      left: 33%;
+    }
+    .prev{
+      left: -33%;
+    }
+  }
+  .carousel-control-custom{
+    &.left, &.right{
+      background-image: none;
+    }
+  }
+}
+
+
+.glyphicon-chevron-left{
+	background: rgba(255, 222, 173, 0);
+}
+.min_height{
+	min-height: 110px;
+	width:	100%
+}
+.nobackground{
+	background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,.0001) 100%) !important;
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,.0001) 100%) !important;
+    background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,.0001))) !important;
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0) 0,rgba(0,0,0,.0001) 100%) !important;
+}
+.mobile_setting .glyphicon{
+	position: absolute !important;
+    left: 23%;
+    top: 8px;
+}
+.editor{
+	position: absolute;
+	letter-spacing: 3px;
+}
+.data_bar{
+	margin-left: 10%;
+    margin-right: 10%;
+}
+.data_input{
+	text-align: left;
+	padding-left: 10%;
+	background: white;
+	border-bottom: 2px solid rgba(92, 146, 204, 0.95);
+    border-left: 2px solid rgba(92, 146, 204, 0.95);
+    border-right: 2px solid rgba(92, 146, 204, 0.95);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: x-large;
+}
+.input_bar{
+	border: 2px solid rgba(92, 146, 204, 0.95);
+    margin-top: 3%;
+    font-size: xx-large;
+    color: rgba(39, 102, 169, 0.95);
+    text-align: center;
+    font-variant: small-caps;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.input_bar:hover{
+	border:  2px solid rgba(92, 146, 204, 0.95);
+    background: rgba(92, 146, 204, 0.95);
+    color: white;
+}
+.data_input_entry{
+	padding:5%;
+	color: cadetblue;
+}
+.textbar{
+	text-align: center;
+    border: 1px solid rgba(158, 155, 155, 0.54);
+    width: 85%;
+    color: rgba(68, 68, 68, 0.73);
+}
+.input_label{
+	font-variant: small-caps;
+}
+.input_bar_selected{
+	border:  2px solid rgba(92, 146, 204, 0.95);
+    background: rgba(92, 146, 204, 0.95);
+    color: white;
+}
+.input_bar_added{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.glyph-plus{
+    font-size: 20px;
+    margin-right: 3%;
+    margin-top: 1.5%;
+}
+.trash_last{
+	margin-left:10px !important;
+}
+.trash_prev{
+	margin-left:5% !important;
+}
+	</style>
+<div class="image_layout row">
+	<div class="editor col-md-8 pull-left">
+		<div class="data_bar" ng-repeat="input_var in $broadcastCtrl.input_variables">
+			<div ng-if="$broadcastCtrl.isAllowed(input_var.type)">
+				<div ng-class="{input_bar: true,input_bar_added: !$broadcastCtrl.drop_down[input_var.key]}">
+					<div ng-if="$broadcastCtrl.showTrash(input_var.id)" class="pull-left glyph-plus">
+							<div ng-show="$broadcastCtrl.showTrash(input_var.id)" class="glyphicon glyphicon-trash trash_last" ng-click="$broadcastCtrl.popOnClick()"></div>
+					</div>
+					{{input_var.key}}
+					<div class="pull-right glyph-plus">
+						<div ng-show="input_var.type == 'Carousel'" class="glyphicon glyphicon-plus " ng-click="$broadcastCtrl.pushOnClick()"></div>
+						<div ng-hide="$broadcastCtrl.drop_down[input_var.key]" class="glyphicon glyphicon-menu-down glyph-toggle" ng-click="$broadcastCtrl.updateDropDown(input_var.key)"></div>
+						<div ng-show="$broadcastCtrl.drop_down[input_var.key]" class="glyphicon glyphicon-menu-up glyph-toggle" ng-click="$broadcastCtrl.updateDropDown(input_var.key)"></div>
+					</div>
+				</div>
+				<div ng-show="$broadcastCtrl.drop_down[input_var.key]" class="data_input">
+					<div class="data_input_entry">
+						<label class="input_label">
+							{{input_var.text}}
+						</label> 
+						<div>
+							<textarea class="textbar" name="{{input_var.key}}" type="textarea" rows="{{input_var.row}}" cols="40" ng-init="$broadcastCtrl.values[input_var.key]=input_var.var_value" ng-model="$broadcastCtrl.values[input_var.key]"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+		</div>
+	</div>
+	<div class="mobile col-md-4 pull-right" >
+		<div class="mobile_inner_div_single">
+			<div class="mobile_text">
+				<p class="paragraph_image_title">{{$broadcastCtrl.nType[1]}}</p>
+			</div>	
+				<div class="mobile_image_layout">
+					<div class="mobile_display">
+						<div class="mobile_header">
+							<div class="mobile_battery">
+							    	<i class="fa fa-battery-half"></i>
+							    </div>
+							<div class="mobile_setting" >
+								<span class="glyphicon glyphicon-cog" ></span>
+	    					</div>
+    					</div>
+    					<div class="notification_layout">
+    						<div class="notification" >		
+							  <div class="logo_notif pull-left" >
+							          <img class="img-responsive" src="/assets/logo_1.png">
+							   </div>
+							   <div class="notification_content">
+                                	<div class="notification_title">{{$broadcastCtrl.values['Title']}}</div>
+                                    <div class="notification_description"> {{$broadcastCtrl.values['Description']}}</div>
+                                    <div class="notification_big_image">{{$broadcastCtrl.values['Content - Text']}}</div>
+                                </div>
+    						</div>
+    						  <div ng-show="$broadcastCtrl.showType() == 1" class="notif_image">
+    							<img src="{{$broadcastCtrl.values['Big - Image']}}" class="img-responsive"/>
+    					</div> 
+    					<div ng-show="$broadcastCtrl.showType() == 2" >
+    						<div class="col-md-12">
+						      <div class="multi-carousel-custom" id="theCarousel">
+						        <div class="carousel-inner-custom">
+						        	<div class="item active" >
+										<div class="col-xs-6">
+											<img src="{{$broadcastCtrl.active_one_image}}" class="min_height img-responsive">
+										</div>
+									</div>
+									<div class="item active" >
+										<div class="col-xs-6">
+											<img src="{{$broadcastCtrl.active_two_image}}" class="min_height img-responsive">
+										</div>
+									</div>
+								</div>
+						        <a class="left nobackground carousel-control-custom" style="font-size: 20% !important;margin-top: 1% !important;" ng-click="$broadcastCtrl.updateActive('prev')"><i class="glyphicon glyphicon-chevron-left"></i></a>
+						        <a class="right nobackground carousel-control-custom" style="font-size: 20% !important;margin-top: 1% !important;" ng-click="$broadcastCtrl.updateActive('next')" ><i class="glyphicon glyphicon-chevron-right"></i></a>
+						      </div>
+						    </div>
+    					</div>
+
+    					</div>
+					</div>
+					<div class="mobile_button">
+					</div>
+				</div>
+				</div>
+			</div>
+	</div>
+</div>
